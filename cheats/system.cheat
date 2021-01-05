@@ -1,0 +1,8 @@
+% system
+
+# Show numbers of phsical CPU cores
+cat /proc/cpuinfo | grep "physical id" | sort | uniq | wc -l
+
+# View numbers of cores of every phsical CPU
+cat /proc/cpuinfo | grep "cpu cores" | uniq
+

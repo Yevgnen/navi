@@ -1,0 +1,31 @@
+% shell
+
+# Install emacs-mac
+brew install emacs-mac --HEAD --with-modules --with-xml2 --with-glib --with-imagemagick --with-jansson --with-natural-title-bar
+
+# Start all elastic services
+for service in elasticsearch-full metricbeat-full filebeat-full kibana-full; do brew services start ${service}; done; brew services ;
+
+# Stop all elastic services
+for service in elasticsearch-full metricbeat-full filebeat-full kibana-full; do brew services stop ${service}; done; brew services ;
+
+# Install Shadowsocks
+bash <(curl -s -L https://git.io/ss.sh)
+
+# Show directory size in descending order
+find . -mindepth 1 -maxdepth 1 -print0 | xargs -0 du -sh | sort -hr
+
+# Delete match line using sed
+find . -name '<file_pattern>' | xargs sed -i '/<pattern>/d'
+
+# Replace content by rg and sed
+rg <query> --files-with-matches -0 | xargs -0 sed -i 's/<query>/<replace>/g'
+
+# Find logs and tail
+find . -name '<file pattern>' -print0 | sort -z | xargs -0 tail -f
+
+# Show memory
+ps -caxm -orss= | awk '{ sum += $1 } END { print "Resident Set Size: " sum/1024 " MiB" }'
+
+# Find a random TCP port
+comm -23 <(seq 49000 65535 | sort) <(ss -tan | awk '{print $4}' | cut -d':' -f2 | grep '[0-9]{1,5}' | sort -u)| shuf | head -n 1

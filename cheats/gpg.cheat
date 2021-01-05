@@ -1,0 +1,41 @@
+% gpg
+
+# https://www.ruanyifeng.com/blog/2013/07/gpg.html
+# List GPG keys
+gpg --list-keys
+
+# Generate new GPG key
+gpg --gen-key
+
+# Generate new GPG key (full)
+gpg --gen-key
+
+# Delete GPG private key
+gpg --delete-secret-keys '<id>'
+
+# Delete GPG public key
+gpg --delete-keys '<id>'
+
+# Import GPG private key
+gpg --import '<private_key>'
+
+# Export GPG public key
+gpg --armor --output '<output_file>' --export '<id>'
+
+# Export GPG private key
+gpg --armor --output '<output_file>' --export-secret-keys '<id>'
+
+# Encrypt file using GPG private key
+gpg --recipient '<id>' --output '<output_file>' --encrypt '<input_file>'
+
+# Decrypt file using GPG private key
+gpg --decrypt '<input_file>' --output '<output_file>'
+
+# Forget passphrase in GPG
+echo RELOADAGENT | gpg-connect-agent
+
+# Forget passphrase in GPG-2
+gpg-connect-agent reloadagent /bye
+
+# Start gpg-agent in background
+gpg-agent --daemon

@@ -1,0 +1,10 @@
+% PDF
+
+# Remove all raster images of PDF
+gs -o '<output_file>' -sDEVICE=pdfwrite -dFILTERIMAGE '<input_file>'
+
+# Remove all text elements of PDF
+gs -o '<output_file>' -sDEVICE=pdfwrite -dFILTERTEXT '<input_file>'
+
+# Remove all vector drawing of PDF
+gs -o '<output_file>' -sDEVICE=pdfwrite -dFILTERVECTOR '<input_file>'

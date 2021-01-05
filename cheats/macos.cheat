@@ -1,0 +1,59 @@
+% macOS
+
+# Allow ssh remote login
+sudo systemsetup -setremotelogin on
+
+# Lock system
+pmset displaysleepnow
+
+# Set emacs-mac title bar color
+defaults write org.gnu.Emacs TransparentTitleBar LIGHT
+
+# Remove emacs-mac title bar icon
+defaults write org.gnu.Emacs HideDocumentIcon YES
+
+# Install WeChat assistant
+curl -o- -L https://omw.limingkai.cn/install.sh | bash -s
+
+# Remove WeChat cache
+rm -rf "~/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/"
+
+# Eject volume
+diskutil eject '<eject_vol>'
+
+# Show disk info
+diskutil list
+
+# Show partition info
+diskutil info '<disk_dev>'
+
+# Show hidden files in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool true; \
+killall Finder
+
+# Hide hidden files in Finder
+defaults write com.apple.finder AppleShowAllFiles -bool false; \
+killall Finder
+
+# Show items in desktop
+defaults write com.apple.finder CreateDesktop -bool true; \
+killall Finder
+
+# Hide items in desktop
+defaults write com.apple.finder CreateDesktop -bool false; \
+killall Finder
+
+# Set wallpaper
+osascript -e 'tell application "Finder" to set desktop picture to POSIX file "<image_path>"'
+
+# Reinstall Xcode Command Line Tools
+sudo rm -rf /Library/Developer/CommandLineTools && xcode-select --install
+
+# Clean App Store cache
+rm -rf $TMPDIR../C/com.apple.appstore
+
+# Get bundle identifier of macOS application
+mdls -name kMDItemCFBundleIdentifier -r <SomeApp.app>
+
+# Make 'Anywhere' appears in Security & Privacy
+sudo spctl --master-disable

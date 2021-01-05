@@ -1,0 +1,7 @@
+% ssh
+
+# Start ssh agent.
+eval "$(ssh-agent -s)"; ssh-add
+
+# Mount remote directory to local.
+sshfs -o allow_other,defer_permissions <user>@<host>:"<remote_directory>" "<local_directory>"

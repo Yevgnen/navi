@@ -1,0 +1,4 @@
+% youtube-dl
+
+# Get playlist info
+youtube-dl --dump-single-json --flat-playlist <playlist_id>
