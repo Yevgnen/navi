@@ -1,4 +1,9 @@
 % git
 
+# References: https://stackoverflow.com/a/29072745/1831512
+# Update all repos in current directory in parallel
+ls | xargs -P<num_parallel> -I{} git -C {} pull
+
 # Update all repos in current directory
 for file in $(ls -1); do cd ${file}; git pull; cd ..; done
+
