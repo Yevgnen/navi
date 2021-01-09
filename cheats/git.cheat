@@ -7,3 +7,8 @@ ls | xargs -P<num_parallel> -I{} git -C {} pull
 # Update all repos in current directory
 for file in $(ls -1); do cd ${file}; git pull; cd ..; done
 
+# Set user GPG sign key
+git config user.signingkey '001F060AFC272242'
+
+# Tell git to sign commit
+git config commit.gpgsign true
