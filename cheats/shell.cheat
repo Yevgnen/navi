@@ -29,3 +29,6 @@ ps -caxm -orss= | awk '{ sum += $1 } END { print "Resident Set Size: " sum/1024 
 
 # Find a random TCP port
 comm -23 <(seq 49000 65535 | sort) <(ss -tan | awk '{print $4}' | cut -d':' -f2 | grep '[0-9]{1,5}' | sort -u)| shuf | head -n 1
+
+# Install elasticsearch-analysis-ik for Elasticsearch
+elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v<version>/elasticsearch-analysis-ik-<version>.zip
