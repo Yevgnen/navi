@@ -1,7 +1,7 @@
 % shell
 
 # Install emacs-mac
-brew install emacs-mac --HEAD --with-modules --with-xml2 --with-glib --with-imagemagick --with-jansson --with-natural-title-bar
+brew install emacs-mac --HEAD --with-modules --with-glib --with-imagemagick --with-jansson --with-natural-title-bar --with-rsvg --with-wordwrap-category
 
 # Start all elastic services
 for service in elasticsearch-full metricbeat-full filebeat-full kibana-full; do brew services start ${service}; done; brew services ;
