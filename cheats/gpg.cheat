@@ -39,3 +39,6 @@ gpg-connect-agent reloadagent /bye
 
 # Start gpg-agent in background
 gpg-agent --daemon
+
+# Reload gpg-agent config
+gpgconf --reload gpg-agent
