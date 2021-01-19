@@ -6,6 +6,9 @@ python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(
 # Upload to PyPI
 python3 -m twine upload --repository pypi dist/*
 
+# Pyenv install new version
+pyenv install <version> -v
+
 # Pyenv install with framework
 PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install <version> -v
 
@@ -17,4 +20,3 @@ poetry add git+<_url>
 
 # Poetry export requirements.txt
 poetry export -f requirements.txt --without-hashes > requirements.txt
-
