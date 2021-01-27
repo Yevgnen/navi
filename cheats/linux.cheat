@@ -1,0 +1,4 @@
+% linux
+
+# Ubuntu empty trash
+/bin/rm -rf ~/.local/share/Trash/*
