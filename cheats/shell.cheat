@@ -33,5 +33,20 @@ comm -23 <(seq 49000 65535 | sort) <(ss -tan | awk '{print $4}' | cut -d':' -f2 
 # Install elasticsearch-analysis-ik for Elasticsearch
 elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v<version>/elasticsearch-analysis-ik-<version>.zip
 
+# https://unix.stackexchange.com/a/432383/28074
 # Zip with progress bar
 zip -r <target_zip> <folder_to_zip> 2>&1 |  pv -lep -s $(ls -Rl1 <folder_to_zip> | egrep -c '^[-/]') > /dev/null
+
+# https://askubuntu.com/a/1092069/108909
+# https://askubuntu.com/questions/909918/q-how-to-show-unzip-progress
+# Unzip lots of small files
+unzip <zip_file> | pv -l -s $(unzip -Z -1 <zip_file> | wc -l) > /dev/null
+
+# Unzip large files
+for f in $(unzip -Z -1 <zip_file>);
+do
+    mkdir -p $(dirname $f)
+    unzip -p <zip_file> $f \
+    | pv -s $(unzip -Z <zip_file> $f | awk '{print $4}') \
+    > $f
+done
