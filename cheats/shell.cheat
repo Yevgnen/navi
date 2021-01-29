@@ -32,3 +32,6 @@ comm -23 <(seq 49000 65535 | sort) <(ss -tan | awk '{print $4}' | cut -d':' -f2 
 
 # Install elasticsearch-analysis-ik for Elasticsearch
 elasticsearch-plugin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v<version>/elasticsearch-analysis-ik-<version>.zip
+
+# Zip with progress bar
+zip -r <target_zip> <folder_to_zip> 2>&1 |  pv -lep -s $(ls -Rl1 <folder_to_zip> | egrep -c '^[-/]') > /dev/null
