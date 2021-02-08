@@ -20,3 +20,6 @@ poetry add git+<_url>
 
 # Poetry export requirements.txt
 poetry export -f requirements.txt --without-hashes > requirements.txt
+
+# Enable hydra completion
+eval "$(python <app.py> -sc install=bash)"
