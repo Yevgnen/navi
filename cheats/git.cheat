@@ -12,3 +12,10 @@ git config user.signingkey '001F060AFC272242'
 
 # Tell git to sign commit
 git config commit.gpgsign true
+
+# References: https://dhoeric.github.io/2017/https-to-ssh-in-gitmodules/
+# Replace HTTPS into SSH url in .gitmodules
+perl -i -p -e 's|https://(.*?)/|git@\1:|g' .gitmodules
+
+# Enable credentials storage in Git repository
+git config credential.helper store && git config credential.helper 'cache --timeout=3600'
