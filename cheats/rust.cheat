@@ -1,0 +1,6 @@
+% rust
+
+# Install rust-analyzer
+curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-<platform> -o ~/.local/bin/rust-analyzer && chmod +x ~/.local/bin/rust-analyzer
+
+$ platform:  echo 'linux mac window.exe' | tr ' ' '\n'
