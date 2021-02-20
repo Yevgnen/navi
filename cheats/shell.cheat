@@ -50,3 +50,8 @@ do
     | pv -s $(unzip -Z <zip_file> $f | awk '{print $4}') \
     > $f
 done
+
+# Find binary executables recursively
+find -type f -executable -exec sh -c "file '{}' | grep -q '<executable_info>'" \; -print
+
+$ executable_info: echo 'executable x86_64'
