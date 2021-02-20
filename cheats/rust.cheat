@@ -3,4 +3,7 @@
 # Install rust-analyzer
 curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/rust-analyzer-<platform> -o ~/.local/bin/rust-analyzer && chmod +x ~/.local/bin/rust-analyzer
 
+# Install Evcxr REPL
+rustup component add rust-src && cargo install evcxr_repl
+
 $ platform:  echo 'linux mac window.exe' | tr ' ' '\n'
