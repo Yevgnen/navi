@@ -1,5 +1,8 @@
 % shell
 
+# Install nix
+curl -L https://nixos.org/nix/install | sh
+
 # Install emacs-mac
 brew install emacs-mac --HEAD --with-modules --with-glib --with-imagemagick --with-jansson --with-natural-title-bar --with-rsvg --with-wordwrap-category
 
