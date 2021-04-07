@@ -23,3 +23,9 @@ poetry export -f requirements.txt --without-hashes > requirements.txt
 
 # Enable hydra completion
 eval "$(python <app.py> -sc install=bash)"
+
+# Poetry install common dev packages
+poetry add flake8 autoflake isort black pylint ipython ipdb --dev
+
+# Poetry install common science packages
+poetry add numpy scipy pandas scikit-learn

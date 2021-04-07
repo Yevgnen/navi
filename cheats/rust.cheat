@@ -6,4 +6,7 @@ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/
 # Install Evcxr REPL
 rustup component add rust-src && cargo install evcxr_repl
 
+# Remove build targets
+find . -name "target" | xargs /bin/rm -rf
+
 $ platform:  echo 'linux mac window.exe' | tr ' ' '\n'
