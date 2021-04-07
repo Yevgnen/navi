@@ -29,3 +29,6 @@ poetry add flake8 autoflake isort black pylint ipython ipdb --dev
 
 # Poetry install common science packages
 poetry add numpy scipy pandas scikit-learn
+
+# Use asdf and direnv to create virtualenv
+echo -e 'use asdf\nlayout python\n' >> .envrc; direnv allow; direnv reload
