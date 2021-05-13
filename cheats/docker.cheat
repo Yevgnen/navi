@@ -1,0 +1,4 @@
+% Docker
+
+# Docker run in detach mode.
+docker run -dp <port>:<port> <tag>
