@@ -1,5 +1,8 @@
 % shell
 
+# List all directories excluding . and ..
+ls -d */ .[^.]*/
+
 # Install nix
 curl -L https://nixos.org/nix/install | sh
 
