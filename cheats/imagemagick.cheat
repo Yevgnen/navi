@@ -1,0 +1,4 @@
+% imagemagick
+
+# Create gif
+convert -resize <resize> -delay 20 -loop 0 <input_files> <output_file>
