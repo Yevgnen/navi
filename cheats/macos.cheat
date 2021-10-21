@@ -57,3 +57,6 @@ mdls -name kMDItemCFBundleIdentifier -r <SomeApp.app>
 
 # Make 'Anywhere' appears in Security & Privacy
 sudo spctl --master-disable
+
+# Change the banner notification dismiss time
+defaults write com.apple.notificationcenterui bannerTime -int 10
