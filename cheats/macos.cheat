@@ -60,3 +60,11 @@ sudo spctl --master-disable
 
 # Change the banner notification dismiss time
 defaults write com.apple.notificationcenterui bannerTime -int 10
+
+# List disks
+diskutil list
+
+# Format disk using diskutil
+diskutil eraseDisk ExFAT USBNAME <disk>
+
+$ disk: ls -1 /dev/disk*
