@@ -7,7 +7,7 @@ ls -d */ .[^.]*/
 curl -L https://nixos.org/nix/install | sh
 
 # Install emacs-mac
-brew install emacs-mac --HEAD --with-modules --with-glib --with-imagemagick --with-jansson --with-natural-title-bar --with-rsvg --with-wordwrap-category
+brew install emacs-mac --HEAD --with-rsvg --with-natural-title-bar --with-starter --with-mac-metal --with-glib --with-imagemagick
 
 # Start all elastic services
 for service in elasticsearch-full metricbeat-full filebeat-full kibana-full; do brew services start ${service}; done; brew services ;
