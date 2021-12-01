@@ -60,4 +60,7 @@ done
 # Find binary executables recursively
 find -type f -executable -exec sh -c "file '{}' | grep -q '<executable_info>'" \; -print
 
+# Fix Kitty terminal issue
+infocmp -a xterm-kitty | ssh <server_info> tic -x -o \~/.terminfo /dev/stdin
+
 $ executable_info: echo 'executable x86_64'
