@@ -61,6 +61,9 @@ sudo spctl --master-disable
 # Change the banner notification dismiss time
 defaults write com.apple.notificationcenterui bannerTime -int 10
 
+# Remove "Other..." in login screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow SHOWOTHERUSERS_MANAGED -bool FALSE
+
 # List disks
 diskutil list
 
