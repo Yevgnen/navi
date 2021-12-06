@@ -1,0 +1,4 @@
+% Java
+
+# Show Java settings
+java -XshowSettings:properties -version
