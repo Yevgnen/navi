@@ -32,3 +32,6 @@ poetry add numpy scipy pandas scikit-learn
 
 # Use asdf and direnv to create virtualenv
 echo -e 'use asdf\nlayout python\n' >> .envrc; direnv allow; direnv reload
+
+# Install tab completion for hdyra
+eval "$(python <script> -sc install=bash)"
