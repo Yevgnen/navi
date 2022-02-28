@@ -1,5 +1,11 @@
 % macOS
 
+# Show system limits
+launchctl limit
+
+# Modify system maxfile limits
+sudo launchctl limit maxfiles <maxfiles> unlimited
+
 # Allow ssh remote login
 sudo systemsetup -setremotelogin on
 
