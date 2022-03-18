@@ -77,3 +77,8 @@ diskutil list
 diskutil eraseDisk ExFAT USBNAME <disk>
 
 $ disk: ls -1 /dev/disk*
+
+# MacPorts clean up
+sudo rm -rf /opt/local/var/macports/build/*; \
+sudo rm -rf /opt/local/var/macports/distfiles/*; \
+sudo rm -rf /opt/local/var/macports/packages/*
