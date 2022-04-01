@@ -5,3 +5,6 @@ mkdir -p <output_dir> && ffmpeg -i <input_file> -r 1 -q:v 1 -qmin 1 -qmax 1 "<ou
 
 # Convert video file formats
 ffpeg -i <input_file> <output_file>
+
+# Split mp3 by time range
+ffmpeg -i <input_file> -acodec copy -ss <start_time> -to <end_time> <output_file>
