@@ -13,4 +13,4 @@ rustup component add rust-src && cargo install evcxr_repl
 find . -name "target" | xargs /bin/rm -rf
 
 $ platform:  echo 'linux mac window.exe' | tr ' ' '\n'
-$ version: curl -s https://api.github.com/repos/rust-analyzer/rust-analyzer/releases/latest | grep download_url | cut -d '"' -f 4
+$ version: curl -s https://api.github.com/repos/rust-lang/rust-analyzer/releases/latest | grep download_url | cut -d '"' -f 4
