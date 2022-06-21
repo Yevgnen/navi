@@ -12,6 +12,9 @@ sudo systemsetup -setremotelogin on
 # Lock system
 pmset displaysleepnow
 
+# Disable new window animations
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+
 # Set emacs-mac title bar color
 defaults write org.gnu.Emacs TransparentTitleBar LIGHT
 
