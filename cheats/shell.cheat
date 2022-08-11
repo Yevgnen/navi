@@ -19,7 +19,8 @@ for service in elasticsearch-full metricbeat-full filebeat-full kibana-full; do 
 bash <(curl -s -L https://git.io/ss.sh)
 
 # Show directory size in descending order
-find . -mindepth 1 -maxdepth 1 -print0 | xargs -0 du -sh | sort -hr
+# find . -mindepth 1 -maxdepth 1 -print0 | xargs -0 du -sh | sort -hr
+tree --du -h -L 1 --sort=size
 
 # Delete match line using sed
 find . -name '<file_pattern>' | xargs sed -i '/<pattern>/d'
