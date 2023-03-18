@@ -8,3 +8,6 @@ ffpeg -i <input_file> <output_file>
 
 # Split mp3 by time range
 ffmpeg -i <input_file> -acodec copy -ss <start_time> -to <end_time> <output_file>
+
+# Convert wav to mp3
+ffmpeg -i <input_file> -vn -ar 44100 -ac 2 -b:a 192k <output_file>
