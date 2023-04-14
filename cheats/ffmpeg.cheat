@@ -11,3 +11,6 @@ ffmpeg -i <input_file> -acodec copy -ss <start_time> -to <end_time> <output_file
 
 # Convert wav to mp3
 ffmpeg -i <input_file> -vn -ar 44100 -ac 2 -b:a 192k <output_file>
+
+# Rotate video
+ffmpeg -i <input_file> -map_metadata 0 -metadata:s:v rotate="<angle>" -codec copy <output_file>
