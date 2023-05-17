@@ -4,6 +4,9 @@
 # Update all repos in current directory in parallel
 ls | xargs -P<num_parallel> -I{} git -C {} pull
 
+# Update all repos in current directory in parallel (recursively)
+fd '.git$' --prune -u -t d -x echo {//}  | xargs -P100 -I{} git -C {} pull
+
 # Update all repos in current directory
 for file in $(ls -1); do cd ${file}; git pull; cd ..; done
 
