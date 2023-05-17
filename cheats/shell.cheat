@@ -31,6 +31,9 @@ rg <query> --files-with-matches -0 | xargs -0 sed -i 's/<query>/<replace>/g'
 # Find logs and tail
 find . -name '<file pattern>' -print0 | sort -z | xargs -0 tail -f
 
+# Find all git repos
+fd '.git$' --prune -u -t d -x echo {//}
+
 # Show memory
 ps -caxm -orss= | awk '{ sum += $1 } END { print "Resident Set Size: " sum/1024 " MiB" }'
 
