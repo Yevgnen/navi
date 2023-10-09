@@ -4,7 +4,7 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # Install rust-analyzer
-curl -L <version> -o ~/.local/bin/rust-analyzer.gz && gzip -d -f ~/.local/bin/rust-analyzer.gz && chmod +x ~/.local/bin/rust-analyzer
+curl -L <version> -o ~/.cargo/bin/rust-analyzer.gz && gzip -d -f ~/.cargo/bin/rust-analyzer.gz && chmod +x ~/.cargo/bin/rust-analyzer
 
 # Install Evcxr REPL
 rustup component add rust-src && cargo install evcxr_repl
